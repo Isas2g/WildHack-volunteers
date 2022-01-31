@@ -6,6 +6,10 @@ module.exports = (bot) => {
   const commands = require("./data").commands;
   bot.setMyCommands(commands);
 
+  bot.onText(/\/start/, (msg) => {
+    senders.menu(msg.chat.id);
+  });
+
   bot.onText(/\/menu/, (msg) => {
     senders.menu(msg.chat.id);
   });
